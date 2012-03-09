@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[\$this->getRequest()->getSession();]]></content>
+    <tabTrigger>sfgetsession</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Get Session</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[/**
+ * @ORM\Entity
+ * @ORM\Table(name="${1:name}")
+ */]]></content>
+    <tabTrigger>sfentity</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / Entity doc</description>
+</snippet>

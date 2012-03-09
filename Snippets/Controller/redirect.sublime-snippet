@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[\$this->redirect(\$this->generateUrl('${1:route}'));]]></content>
+    <tabTrigger>sfredirect</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Redirect</description>
+</snippet>

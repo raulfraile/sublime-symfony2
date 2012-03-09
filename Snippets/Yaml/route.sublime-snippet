@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[${1:route_name}:
+    pattern:   /${2:url}
+    defaults:  { _controller: ${3:AcmeTestBundle:Test:action} }]]></content>
+    <tabTrigger>sfroute</tabTrigger>
+    <scope>source.yaml</scope>
+    <description>Symfony2 / YAML / Route</description>
+</snippet>

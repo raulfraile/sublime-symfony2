@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[/**
+ * @ORM\Column(name="id", type="integer", nullable=false)
+ * @ORM\Id
+ * @ORM\GeneratedValue(strategy="IDENTITY")
+ */]]></content>
+    <tabTrigger>sfidcolumn</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / Id column doc</description>
+</snippet>

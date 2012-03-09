@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[\$this->get('session')->setFlash('${1:notice}', '${2:message}');]]></content>
+    <tabTrigger>sfsetflash</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Set Flash</description>
+</snippet>

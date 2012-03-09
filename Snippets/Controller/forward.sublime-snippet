@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[\$this->forward('${1:TestBundle:Folder:view}', array());]]></content>
+    <tabTrigger>sfforward</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Forward</description>
+</snippet>
+

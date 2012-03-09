@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[\$this->render('${1:TestBundle:Folder:view.html.twig}', array());]]></content>
+    <tabTrigger>sfrender</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Render</description>
+</snippet>
+

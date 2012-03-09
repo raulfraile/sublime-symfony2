@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[/**
+ * @ORM\Column(type="string", length=${1:100})
+ */]]></content>
+    <tabTrigger>sfstringcolumn</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / String column doc</description>
+</snippet>
