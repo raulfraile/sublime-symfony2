@@ -1,4 +1,4 @@
-This is a [Sublime Text][sublime] package which includes handy snippets for doing Symfony2 framework development.
+This is a [Sublime Text][sublime] package which includes handy snippets for doing [Symfony2][symfony2] framework development.
 
 ## Installation ##
 
@@ -13,6 +13,8 @@ If you haven't got Package Control installed you will need to make a clone of th
     git clone https://github.com/raulfraile/sublime-symfony2 symfony2-snippets
 
 ## Shortcuts ##
+
+All shortcuts start with the `sf` prefix and are both short and intuitive:
 
 ### Controller ###
 
@@ -115,5 +117,10 @@ route_name:
     defaults:  { _controller: AcmeTestBundle:Test:action }
 ```
 
+## Contribute ##
+
+If you miss something, feel free to fork this repository and send a PR with your awesome snippets for Symfony2 :)
+
 [sublime]: http://www.sublimetext.com/
+[symfony2]: http://www.symfony.com
 [package_control]: http://wbond.net/sublime_packages/package_control
