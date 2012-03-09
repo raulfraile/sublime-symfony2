@@ -12,6 +12,11 @@ If you haven't got Package Control installed you will need to make a clone of th
 
     git clone https://github.com/raulfraile/sublime-symfony2 symfony2-snippets
 
+## Shortcuts ##
+
+### Controller ###
+
+`sfforward` => $this->forward('TestBundle:Folder:view', array());
 
 [sublime]: http://www.sublimetext.com/
 [package_control]: http://wbond.net/sublime_packages/package_control
