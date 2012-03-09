@@ -22,6 +22,12 @@ If you haven't got Package Control installed you will need to make a clone of th
 $em = $this->getDoctrine()->getEntityManager();
 ```
 
+`sfrepo`
+
+``` php
+$em->getRepository('Bundle:Repository');
+```
+
 `sfforward`
 
 ``` php

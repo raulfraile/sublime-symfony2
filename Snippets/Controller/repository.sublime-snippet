@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[\$em->getRepository('${1:Bundle:Repository}');]]></content>
+    <tabTrigger>sfrepo</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Get Repository</description>
+</snippet>
