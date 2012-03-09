@@ -16,7 +16,47 @@ If you haven't got Package Control installed you will need to make a clone of th
 
 ### Controller ###
 
-`sfforward` => $this->forward('TestBundle:Folder:view', array());
+`sfforward`
+
+``` php
+$this->forward('TestBundle:Folder:view', array());
+```
+
+`sfredirect`
+
+``` php
+$this->redirect($this->generateUrl('route'));
+```
+
+`sfrender`
+``` php
+$this->render('TestBundle:Folder:view.html.twig', array());
+```
+
+`sfsession`
+``` php
+$this->getRequest()->getSession();
+```
+
+`sfsetflash`
+``` php
+this->get('session')->setFlash('notice', 'message');
+```
+
+### Doctrine ###
+
+#### Annotations ####
+
+`sfentity`
+
+``` php
+**
+ * @ORM\Entity
+ * @ORM\Table(name="name")
+ */
+```
+
+### YAML ###
 
 [sublime]: http://www.sublimetext.com/
 [package_control]: http://wbond.net/sublime_packages/package_control
