@@ -1,0 +1,31 @@
+<snippet>
+    <content><![CDATA[
+namespace ${1:VendorName}\Bundle\\${2:BundleName}Bundle\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilder;
+
+class ${3:FormName}Type extends AbstractType
+{
+    public function buildForm(FormBuilder \$builder, array \$options)
+    {
+        ${0}
+    }
+
+    public function getDefaultOptions(array \$options)
+    {
+        return array(${4:
+            'data_class' => '${5:${1}\\\\Bundle\\\\${2}Bundle\\\\Entity\\\\${3}}',
+        });
+    }
+
+    public function getName()
+    {
+        return '${3/./\l$0/}';
+    }
+}
+]]></content>
+    <tabTrigger>sfform</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Form Type</description>
+</snippet>
