@@ -168,6 +168,11 @@ route_name:
 
 If you miss something, feel free to fork this repository and send a PR with your awesome snippets for Symfony2 :)
 
+### Contributors list ###
+
+* Raúl Fraile: [github](http://github.com/raulfraile) | [twitter](http://twitter.com/raulfraile)
+* Pierre-Yves LEBECQ: [github](http://github.com/pylebecq) | [twitter](http://twitter.com/pylebecq)
+
 [sublime]: http://www.sublimetext.com/
 [symfony2]: http://www.symfony.com
 [package_control]: http://wbond.net/sublime_packages/package_control
