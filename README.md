@@ -18,6 +18,22 @@ All shortcuts start with the `sf` prefix and are both short and intuitive:
 
 ### Controller ###
 
+`sfcontroller`
+
+``` php
+namespace VendorName\Bundle\BundleNameBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class ControllerNameController extends Controller
+{
+    public function indexAction()
+    {
+        return $this->render('VendorNameBundleNameBundle:ControllerName:index.html.twig');
+    }
+}
+```
+
 `sfem`
 
 ``` php
@@ -58,6 +74,37 @@ $this->getRequest()->getSession();
 
 ``` php
 this->get('session')->setFlash('notice', 'message');
+```
+
+### Forms ###
+
+`sfform`
+
+``` php
+namespace VendorName\Bundle\BundleNameBundle\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilder;
+
+class FormNameType extends AbstractType
+{
+    public function buildForm(FormBuilder $builder, array $options)
+    {
+        
+    }
+
+    public function getDefaultOptions(array $options)
+    {
+        return array(
+            'data_class' => 'VendorName\\Bundle\\BundleNameBundle\\Entity\\FormName',
+        );
+    }
+
+    public function getName()
+    {
+        return 'formName';
+    }
+}
 ```
 
 ### Doctrine ###
