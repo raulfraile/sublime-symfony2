@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[
+namespace ${1:VendorName}\Bundle\\${2:BundleName}Bundle\Twig\Extension;
+
+class ${3:ExtensionName}Extension extends \Twig_Extension
+{
+    /**
+     * Returns a list of filters to add to the existing list.
+     *
+     * @return array An array of filters
+     */
+    public function getFilters()
+    {
+        return array();
+    }
+
+    /**
+     * Returns a list of tests to add to the existing list.
+     *
+     * @return array An array of tests
+     */
+    public function getTests()
+    {
+        return array();
+    }
+
+    /**
+     * Returns a list of functions to add to the existing list.
+     *
+     * @return array An array of functions
+     */
+    public function getFunctions()
+    {
+        return array();
+    }
+}
+]]></content>
+    <tabTrigger>sftwigextension</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Twig / Extension class</description>
+</snippet>
