@@ -90,7 +90,7 @@ class FormNameType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        
+
     }
 
     public function getDefaultOptions(array $options)
@@ -103,6 +103,50 @@ class FormNameType extends AbstractType
     public function getName()
     {
         return 'formName';
+    }
+}
+```
+
+`sfdatatransformer`
+
+``` php
+namespace VendorName\Bundle\BundleNameBundle\Form\DataTransformer;
+
+use Symfony\Component\Form\DataTransformerInterface;
+use Symfony\Component\Form\Exception\UnexpectedTypeException;
+use Symfony\Component\Form\Exception\TransformationFailedException;
+
+class TransformerNameTransformer implements DataTransformerInterface
+{
+    /**
+     * Transforms a value from the original representation to a transformed representation.
+     *
+     * @param  mixed $value              The value in the original representation
+     *
+     * @return mixed                     The value in the transformed representation
+     *
+     * @throws UnexpectedTypeException   when the argument is not a string
+     * @throws TransformationFailedException  when the transformation fails
+     */
+    public function transform($value)
+    {
+
+    }
+
+    /**
+     * Transforms a value from the transformed representation to its original
+     * representation.
+     *
+     * @param  mixed $value              The value in the transformed representation
+     *
+     * @return mixed                     The value in the original representation
+     *
+     * @throws UnexpectedTypeException   when the argument is not of the expected type
+     * @throws TransformationFailedException  when the transformation fails
+     */
+    public function reverseTransform($value)
+    {
+
     }
 }
 ```
@@ -152,6 +196,47 @@ class FormNameType extends AbstractType
 /**
  * @ORM\Column(type="text")
  */
+```
+
+### Twig ###
+
+`sftwigextension`
+
+``` php
+namespace VendorName\Bundle\BundleNameBundle\Twig\Extension;
+
+class ExtensionNameExtension extends \Twig_Extension
+{
+    /**
+     * Returns a list of filters to add to the existing list.
+     *
+     * @return array An array of filters
+     */
+    public function getFilters()
+    {
+        return array();
+    }
+
+    /**
+     * Returns a list of tests to add to the existing list.
+     *
+     * @return array An array of tests
+     */
+    public function getTests()
+    {
+        return array();
+    }
+
+    /**
+     * Returns a list of functions to add to the existing list.
+     *
+     * @return array An array of functions
+     */
+    public function getFunctions()
+    {
+        return array();
+    }
+}
 ```
 
 ### YAML ###
