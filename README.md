@@ -164,6 +164,29 @@ class TransformerNameTransformer implements DataTransformerInterface
  */
 ```
 
+`sfentityClass`
+
+``` php
+namespace VendorName\BundleNameBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/*
+* @ORM\Entity(repositoryClass="VendorName\BundleNameBundle\Repository\repositoryClassRepository")
+* @ORM\Table(name="table_name")
+*/
+class repositoryClass
+{
+    /**
+    * @ORM\Id
+    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+}
+```
+
 `sfidcolumn`
 
 ``` php
