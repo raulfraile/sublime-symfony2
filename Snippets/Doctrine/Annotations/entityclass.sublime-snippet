@@ -4,7 +4,7 @@
 use Doctrine\\ORM\\Mapping as ORM;
 use Symfony\\Component\\Validator\\Constraints as Assert;
 
-/*
+/**
 * @ORM\Entity(repositoryClass="${1}\\${2}Bundle\\Repository\\${3:repositoryClass}Repository")
 * @ORM\Table(name="${4:table_name}")
 */
