@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[namespace ${1:VendorName}\\Bundle\\${2:BundleName}Bundle\\DependencyInjection;
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\Config\FileLocator;
+
+class ${2:BundleName}Extension extends Extension
+{
+    public function load(array \$configs, ContainerBuilder \$container)
+    {
+        \$config = \$this->processConfiguration(new Configuration(), \$configs);
+        if (false === \$config['enabled']) {
+            return;
+        }
+
+        \$loader = new XmlFileLoader(\$container, new FileLocator(__DIR__.'/../Resources/config'));
+        \$loader->load('services.xml');
+    }
+}
+]]></content>
+    <tabTrigger>sfdiextension</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Dependency Injection / Extension</description>
+</snippet>
