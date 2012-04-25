@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[namespace ${1:VendorName}\\Bundle\\${2:BundleName}Bundle\\Entity;
+
+use Doctrine\ORM\EntityRepository;
+
+class ${3:EntityName}Repository extends EntityRepository
+{
+}
+]]></content>
+    <tabTrigger>sfrepository</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Doctrine / Repository</description>
+</snippet>
