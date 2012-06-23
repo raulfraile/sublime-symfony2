@@ -34,6 +34,28 @@ class ControllerNameController extends Controller
 }
 ```
 
+`sfcontrollera`
+
+``` php
+namespace VendorName\Bundle\BundleNameBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
+class ControllerNameController extends Controller
+{
+    /**
+     * @Route(route configuration)
+     * @Template
+     */
+    public function indexAction()
+    {
+
+    }
+}
+```
+
 `sfem`
 
 ``` php
