@@ -56,6 +56,28 @@ class ControllerNameController extends Controller
 }
 ```
 
+`sfaction`
+
+``` php
+public function indexAction()
+{
+    return $this->render('BundleNameBundle:ControllerName:index.html.twig');
+}
+```
+
+`sfactiona`
+
+``` php
+/**
+ * @Route(route configuration)
+ * @Template()
+ */
+public function indexAction()
+{
+
+}
+```
+
 `sfem`
 
 ``` php
