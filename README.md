@@ -325,6 +325,7 @@ If you miss something, feel free to fork this repository and send a PR with your
 * Raúl Fraile: [github](http://github.com/raulfraile) | [twitter](http://twitter.com/raulfraile)
 * Pierre-Yves LEBECQ: [github](http://github.com/pylebecq) | [twitter](http://twitter.com/pylebecq)
 * Willemsen Christophe: [github](http://github.com/kwattro) | [twitter](http://twitter.com/kwattroweb)
+* Alexandre Salomé: [github](http://github.com/alexandresalome)
 
 [sublime]: http://www.sublimetext.com/
 [symfony2]: http://www.symfony.com
