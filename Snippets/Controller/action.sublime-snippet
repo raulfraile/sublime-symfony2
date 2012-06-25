@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+public function ${1:index}Action()
+{
+    return \$this->render('${2:BundleName}Bundle:${3:ControllerName}:${1}.html.twig');
+}
+]]></content>
+    <tabTrigger>sfaction</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Action</description>
+</snippet>
