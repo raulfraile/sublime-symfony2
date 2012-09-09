@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[namespace ${1:VendorName}\\${2:BundleName}Bundle\\Document;
+
+use Doctrine\\ODM\\MongoDB\\Mapping\\Annotations as MongoDB;
+use Symfony\\Component\\Validator\\Constraints as Assert;
+
+/**
+* @MongoDB\Document(collection="${3:repositoryClass}", repositoryClass="${1}\\${2}Bundle\\Repository\\${3:repositoryClass}Repository")
+*/
+class ${3}
+{
+	/**
+	* @MongoDB\Id
+	*/
+	protected \$id;
+}
+]]></content>
+    <tabTrigger>sfdocumentClass</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Document / Document class</description>
+</snippet>

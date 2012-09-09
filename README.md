@@ -231,6 +231,26 @@ class repositoryClass
 }
 ```
 
+`sfdocumentClass`
+
+``` php
+namespace VendorName\BundleNameBundle\Document;
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+* @MongoDB\Document(collection="repositoryClass", repositoryClass="VendorName\BundleNameBundle\Repository\repositoryClassRepository")
+*/
+class repositoryClass
+{
+    /**
+    * @MongoDB\Id
+    */
+    protected $id;
+}
+```
+
 `sfidcolumn`
 
 ``` php
