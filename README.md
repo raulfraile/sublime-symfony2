@@ -257,11 +257,91 @@ class repositoryClass
  */
 ```
 
-`sfstextcolumn`
+`sftextcolumn`
 
 ``` php
 /**
  * @ORM\Column(type="text")
+ */
+```
+
+`sfintegercolumn`
+
+``` php
+/**
+ * @ORM\Column(type="integer")
+ */
+```
+
+`sfbooleancolumn`
+
+``` php
+/**
+ * @ORM\Column(type="boolean")
+ */
+```
+
+`sfsmallintcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="smallint")
+ */
+```
+
+`sfbigintcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="bigint")
+ */
+```
+
+`sfdatetimecolumn`
+
+``` php
+/**
+ * @ORM\Column(type="datetime")
+ */
+```
+
+`sfdatecolumn`
+
+``` php
+/**
+ * @ORM\Column(type="date")
+ */
+```
+
+`sftimecolumn`
+
+``` php
+/**
+ * @ORM\Column(type="time")
+ */
+```
+
+`sffloatcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="float")
+ */
+```
+
+`sfarraycolumn`
+
+``` php
+/**
+ * @ORM\Column(type="array")
+ */
+```
+
+`sfobjectcolumn`
+
+``` php
+/**
+ * @ORM\Column(type="object")
  */
 ```
 
