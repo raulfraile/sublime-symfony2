@@ -306,6 +306,15 @@ class ExtensionNameExtension extends \Twig_Extension
 }
 ```
 
+`sftwigform`
+
+``` html
+<form class="${1}" action="{{ ${2:path('${3}')} }}" method="${4:post}" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" value="${5:Submit}" /> 
+</form>
+```
+
 ### YAML ###
 
  `sfroute`
