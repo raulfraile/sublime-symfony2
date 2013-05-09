@@ -117,7 +117,7 @@ $this->getRequest()->getSession();
 `sfsetflash`
 
 ``` php
-this->get('session')->setFlash('notice', 'message');
+$this->get('session')->getFlashBag()->add('notice', 'message');
 ```
 
 ### Forms ###
