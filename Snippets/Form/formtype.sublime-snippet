@@ -3,11 +3,11 @@
 namespace ${1:VendorName}\Bundle\\${2:BundleName}Bundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 
 class ${3:FormName}Type extends AbstractType
 {
-    public function buildForm(FormBuilder \$builder, array \$options)
+    public function buildForm(FormBuilderInterface \$builder, array \$options)
     {
         ${0}
     }
