@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[/**
+ * @ORM\Column(type="datetime")
+ */]]></content>
+    <tabTrigger>sfdatetimecolumn</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / DateTime column doc</description>
+</snippet>

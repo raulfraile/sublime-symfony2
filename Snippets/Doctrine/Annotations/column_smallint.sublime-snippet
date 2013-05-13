@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[/**
+ * @ORM\Column(type="smallint")
+ */]]></content>
+    <tabTrigger>sfsmallintcolumn</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / SmallInt column doc</description>
+</snippet>

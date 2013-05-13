@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[/**
+ * @ORM\Column(type="array")
+ */]]></content>
+    <tabTrigger>sfarraycolumn</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / Array column doc</description>
+</snippet>
