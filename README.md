@@ -365,6 +365,41 @@ class repositoryClass
  */
 ```
 
+### Validation ###
+
+`sfconstraint`
+
+``` php
+namespace Acme\DemoBundle\Validator\Constraints;
+
+use Symfony\Component\Validator\Constraint;
+
+/**
+ * @Annotation
+ */
+class MyConstraint extends Constraint
+{
+    public $message = 'The string "%string%" contains an illegal character: it can only contain letters or numbers.';
+}
+```
+
+`sfconstraintvalidator`
+
+``` php
+namespace Acme\DemoBundle\Validator\Constraints;
+
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+
+class MyConstraintValidator extends ConstraintValidator
+{
+    public function validate($value, Constraint $constraint)
+    {
+        //Put your validation code here
+    }
+}
+```
+
 ### Twig ###
 
 `sftwigextension`
