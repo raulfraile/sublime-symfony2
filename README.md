@@ -393,7 +393,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class MyConstraintValidator extends ConstraintValidator
 {
-    public function validate(\$value, Constraint \$constraint)
+    public function validate($value, Constraint $constraint)
     {
         //Put your validation code here
     }
