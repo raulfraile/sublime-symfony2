@@ -383,6 +383,21 @@ class MyConstraint extends Constraint
 }
 ```
 
+`sfconstraintvalidator`
+
+``` php
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+
+class MyConstraintValidator extends ConstraintValidator
+{
+    public function validate(\$value, Constraint \$constraint)
+    {
+        //Put your validation code here
+    }
+}
+```
+
 ### Twig ###
 
 `sftwigextension`
