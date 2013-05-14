@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+namespace Acme\DemoBundle\Validator\Constraints;
+
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+
+class MyConstraintValidator extends ConstraintValidator
+{
+    public function validate(\$value, Constraint \$constraint)
+    {
+		//Put your validation code here
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sfconstraintvalidator</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<description>Symfony2 / Validator / Constraint</description>
+</snippet>
