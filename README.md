@@ -128,11 +128,11 @@ $this->get('session')->getFlashBag()->add('notice', 'message');
 namespace VendorName\Bundle\BundleNameBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 
 class FormNameType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
     }
