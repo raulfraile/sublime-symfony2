@@ -386,6 +386,8 @@ class MyConstraint extends Constraint
 `sfconstraintvalidator`
 
 ``` php
+namespace Acme\DemoBundle\Validator\Constraints;
+
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
