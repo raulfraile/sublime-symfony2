@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[\$em = \$this->getDoctrine()->getEntityManager();]]></content>
+    <content><![CDATA[\$em = \$this->getDoctrine()->getManager();]]></content>
     <tabTrigger>sfem</tabTrigger>
     <scope>source.php</scope>
     <description>Symfony2 / Controller / Get Entity Manager</description>
