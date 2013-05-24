@@ -81,7 +81,7 @@ public function indexAction()
 `sfem`
 
 ``` php
-$em = $this->getDoctrine()->getEntityManager();
+$em = $this->getDoctrine()->getManager();
 ```
 
 `sfrepo`
