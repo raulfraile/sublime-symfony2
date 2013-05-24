@@ -1,5 +1,8 @@
 This is a [Sublime Text][sublime] package which includes handy snippets for doing [Symfony2][symfony2] framework development.
 
+**Important:** The `master` branch of this plugin will always be in sync with the latest stable release of Symfony2.
+New branches will be created whenever a non backward-compatible change in Symfony2 is introduced into the snippets. So, if you need to work with an older version of Symfony2, please check the branch list to find the branch compatible with the version you are looking for and proceed to a manual install of this branch.
+
 ## Installation ##
 
 ### With Package Control ###
@@ -11,6 +14,11 @@ If you have the [Package Control][package_control] package installed, you can in
 If you haven't got Package Control installed you will need to make a clone of this repository into your packages folder, like so:
 
     git clone https://github.com/raulfraile/sublime-symfony2 symfony2-snippets
+
+If you need to install a specific branch of the plugin (2.0 in this example), please use the following commands:
+
+    cd symfony2-snippets
+    git checkout origin/2.0
 
 ## Shortcuts ##
 
@@ -446,7 +454,7 @@ class ExtensionNameExtension extends \Twig_Extension
 ``` html
 <form class="${1}" action="{{ ${2:path('${3}')} }}" method="${4:post}" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
-    <input type="submit" value="${5:Submit}" /> 
+    <input type="submit" value="${5:Submit}" />
 </form>
 ```
 
