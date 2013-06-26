@@ -458,6 +458,12 @@ class ExtensionNameExtension extends \Twig_Extension
 </form>
 ```
 
+`trans`
+
+``` jinja
+{% trans %}{% endtrans %}
+```
+
 ### YAML ###
 
  `sfroute`
