@@ -29,15 +29,13 @@ All shortcuts start with the `sf` prefix and are both short and intuitive:
 `sfcontroller`
 
 ``` php
-namespace VendorName\Bundle\BundleNameBundle\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ControllerNameController extends Controller
+class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('VendorNameBundleNameBundle:ControllerName:index.html.twig');
+        return $this->render('.html.twig');
     }
 }
 ```
@@ -45,17 +43,15 @@ class ControllerNameController extends Controller
 `sfcontrollera`
 
 ``` php
-namespace VendorName\Bundle\BundleNameBundle\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ControllerNameController extends Controller
+class DefaultController extends Controller
 {
     /**
-     * @Route(route configuration)
-     * @Template
+     * @Route("/", name="")
+     * @Template()
      */
     public function indexAction()
     {
@@ -69,7 +65,7 @@ class ControllerNameController extends Controller
 ``` php
 public function indexAction()
 {
-    return $this->render('BundleNameBundle:ControllerName:index.html.twig');
+    return $this->render('.html.twig');
 }
 ```
 
@@ -77,7 +73,7 @@ public function indexAction()
 
 ``` php
 /**
- * @Route(route configuration)
+ * @Route("/", name="")
  * @Template()
  */
 public function indexAction()
@@ -101,22 +97,22 @@ $em->getRepository('Bundle:Repository');
 `sfforward`
 
 ``` php
-$this->forward('TestBundle:Folder:view', array());
+$this->forward('Bundle:Controller:action', array(), array());
 ```
 
 `sfredirect`
 
 ``` php
-$this->redirect($this->generateUrl('route'));
+$this->redirect($this->generateUrl('route', array()));
 ```
 
 `sfrender`
 
 ``` php
-$this->render('TestBundle:Folder:view.html.twig', array());
+$this->render('Bundle:Folder:template.html.twig', array());
 ```
 
-`sfsession`
+`sfgetsession`
 
 ``` php
 $this->getRequest()->getSession();
@@ -125,7 +121,74 @@ $this->getRequest()->getSession();
 `sfsetflash`
 
 ``` php
-$this->get('session')->getFlashBag()->add('notice', 'message');
+$this->get('session')->getFlashBag()->add('type', 'message');
+```
+
+### DependencyInjection ###
+
+`sfdiconfiguration`
+
+``` php
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+
+class Configuration implements ConfigurationInterface
+{
+    public function getConfigTreeBuilder()
+    {
+        $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('bundle_name');
+
+        $rootNode
+            ->children()
+                ->scalarNode('enabled')
+                    ->setInfo('Enable the container extension')
+                    ->setDefault(true)
+                ->end()
+            ->end()
+        ;
+
+        return $treeBuilder;
+    }
+}
+```
+
+`sfdiextension`
+
+``` php
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+
+class BundleExtension extends Extension
+{
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $config = $this->processConfiguration(new Configuration(), $configs);
+        if (false === $config['enabled']) {
+            return;
+        }
+
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.xml');
+    }
+}
+```
+
+`sfdiservices`
+
+``` xml
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="id" class="class" />
+    </services>
+</container>
 ```
 
 ### Forms ###
@@ -133,28 +196,36 @@ $this->get('session')->getFlashBag()->add('notice', 'message');
 `sfform`
 
 ``` php
-namespace VendorName\Bundle\BundleNameBundle\Form\Type;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class FormNameType extends AbstractType
+class NameType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
     }
 
-    public function getDefaultOptions(array $options)
+    /**
+     * {@inheritdoc}
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
-            'data_class' => 'VendorName\\Bundle\\BundleNameBundle\\Entity\\FormName',
-        );
+        $resolver->setDefaults(array(
+            'data_class' => '',
+        ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
-        return 'formName';
+        return 'name';
     }
 }
 ```
@@ -162,23 +233,14 @@ class FormNameType extends AbstractType
 `sfdatatransformer`
 
 ``` php
-namespace VendorName\Bundle\BundleNameBundle\Form\DataTransformer;
-
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
-class TransformerNameTransformer implements DataTransformerInterface
+class NameTransformer implements DataTransformerInterface
 {
     /**
-     * Transforms a value from the original representation to a transformed representation.
-     *
-     * @param  mixed $value              The value in the original representation
-     *
-     * @return mixed                     The value in the transformed representation
-     *
-     * @throws UnexpectedTypeException   when the argument is not a string
-     * @throws TransformationFailedException  when the transformation fails
+     * {@inheritdoc}
      */
     public function transform($value)
     {
@@ -186,15 +248,7 @@ class TransformerNameTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transforms a value from the transformed representation to its original
-     * representation.
-     *
-     * @param  mixed $value              The value in the transformed representation
-     *
-     * @return mixed                     The value in the original representation
-     *
-     * @throws UnexpectedTypeException   when the argument is not of the expected type
-     * @throws TransformationFailedException  when the transformation fails
+     * {@inheritdoc}
      */
     public function reverseTransform($value)
     {
@@ -205,58 +259,66 @@ class TransformerNameTransformer implements DataTransformerInterface
 
 ### Doctrine ###
 
+#### Classes ####
+
+`sfentityclass`
+
+``` php
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity(repositoryClass="")
+ * @ORM\Table(name="")
+ */
+class Entity
+{
+    /**
+     * @ORM\Id()
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+}
+```
+
+`sfdocumentclass`
+
+``` php
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @MongoDB\Document(collection="", repositoryClass="")
+ */
+class Document
+{
+    /**
+     * @MongoDB\Id()
+     */
+    protected $id;
+}
+```
+
+`sfrepository`
+
+``` php
+use Doctrine\ORM\EntityRepository;
+
+class EntityNameRepository extends EntityRepository
+{
+}
+```
+
 #### Annotations ####
 
 `sfentity`
 
 ``` php
-**
- * @ORM\Entity
+/**
+ * @ORM\Entity()
  * @ORM\Table(name="name")
  */
-```
-
-`sfentityClass`
-
-``` php
-namespace VendorName\BundleNameBundle\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-
-/*
-* @ORM\Entity(repositoryClass="VendorName\BundleNameBundle\Repository\repositoryClassRepository")
-* @ORM\Table(name="table_name")
-*/
-class repositoryClass
-{
-    /**
-    * @ORM\Id
-    * @ORM\Column(type="integer")
-    * @ORM\GeneratedValue(strategy="AUTO")
-    */
-    protected $id;
-}
-```
-
-`sfdocumentClass`
-
-``` php
-namespace VendorName\BundleNameBundle\Document;
-
-use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Symfony\Component\Validator\Constraints as Assert;
-
-/**
-* @MongoDB\Document(collection="repositoryClass", repositoryClass="VendorName\BundleNameBundle\Repository\repositoryClassRepository")
-*/
-class repositoryClass
-{
-    /**
-    * @MongoDB\Id
-    */
-    protected $id;
-}
 ```
 
 `sfidcolumn`
@@ -264,7 +326,7 @@ class repositoryClass
 ``` php
 /**
  * @ORM\Column(name="id", type="integer", nullable=false)
- * @ORM\Id
+ * @ORM\Id()
  * @ORM\GeneratedValue(strategy="IDENTITY")
  */
 ```
@@ -378,32 +440,28 @@ class repositoryClass
 `sfconstraint`
 
 ``` php
-namespace Acme\DemoBundle\Validator\Constraints;
-
 use Symfony\Component\Validator\Constraint;
 
 /**
  * @Annotation
  */
-class MyConstraint extends Constraint
+class NameConstraint extends Constraint
 {
-    public $message = 'The string "%string%" contains an illegal character: it can only contain letters or numbers.';
+    public $message = '';
 }
 ```
 
 `sfconstraintvalidator`
 
 ``` php
-namespace Acme\DemoBundle\Validator\Constraints;
-
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
-class MyConstraintValidator extends ConstraintValidator
+class NameValidator extends ConstraintValidator
 {
     public function validate($value, Constraint $constraint)
     {
-        //Put your validation code here
+
     }
 }
 ```
@@ -413,14 +471,10 @@ class MyConstraintValidator extends ConstraintValidator
 `sftwigextension`
 
 ``` php
-namespace VendorName\Bundle\BundleNameBundle\Twig\Extension;
-
-class ExtensionNameExtension extends \Twig_Extension
+class NameExtension extends \Twig_Extension
 {
     /**
-     * Returns a list of filters to add to the existing list.
-     *
-     * @return array An array of filters
+     * {@inheritdoc}
      */
     public function getFilters()
     {
@@ -428,9 +482,7 @@ class ExtensionNameExtension extends \Twig_Extension
     }
 
     /**
-     * Returns a list of tests to add to the existing list.
-     *
-     * @return array An array of tests
+     * {@inheritdoc}
      */
     public function getTests()
     {
@@ -438,9 +490,7 @@ class ExtensionNameExtension extends \Twig_Extension
     }
 
     /**
-     * Returns a list of functions to add to the existing list.
-     *
-     * @return array An array of functions
+     * {@inheritdoc}
      */
     public function getFunctions()
     {
@@ -451,10 +501,11 @@ class ExtensionNameExtension extends \Twig_Extension
 
 `sftwigform`
 
-``` html
-<form class="${1}" action="{{ ${2:path('${3}')} }}" method="${4:post}" {{ form_enctype(form) }}>
+``` jinja
+<form class="" action="{{ path('') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_errors(form) }}
     {{ form_widget(form) }}
-    <input type="submit" value="${5:Submit}" />
+    <input type="submit" value="Submit" />
 </form>
 ```
 
@@ -470,8 +521,8 @@ class ExtensionNameExtension extends \Twig_Extension
 
 ``` yaml
 route_name:
-    pattern:   /url
-    defaults:  { _controller: AcmeTestBundle:Test:action }
+    pattern:   /
+    defaults:  { _controller: Bundle:Controller:action }
 ```
 
 ## Contribute ##
