@@ -1,27 +1,35 @@
 <snippet>
     <content><![CDATA[
-namespace ${1:VendorName}\Bundle\\${2:BundleName}Bundle\Form\Type;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ${3:FormName}Type extends AbstractType
+class ${1:Name}Type extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface \$builder, array \$options)
     {
         ${0}
     }
 
-    public function getDefaultOptions(array \$options)
+    /**
+     * {@inheritdoc}
+     */
+    public function setDefaultOptions(OptionsResolverInterface \$resolver)
     {
-        return array(${4:
-            'data_class' => '${5:${1}\\\\Bundle\\\\${2}Bundle\\\\Entity\\\\${3}}',
-        });
+        \$resolver->setDefaults(array(${2:
+            'data_class' => '${3}',
+        }));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
-        return '${3/./\l$0/}';
+        return '${1/./\l$0/}';
     }
 }
 ]]></content>

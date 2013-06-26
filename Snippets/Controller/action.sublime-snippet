@@ -2,7 +2,7 @@
     <content><![CDATA[
 public function ${1:index}Action()
 {
-    return \$this->render('${2:BundleName}Bundle:${3:ControllerName}:${1}.html.twig');
+    return \$this->render('${2}.html.twig');
 }
 ]]></content>
     <tabTrigger>sfaction</tabTrigger>

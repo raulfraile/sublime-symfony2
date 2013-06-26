@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[\$this->get('session')->getFlashBag()->add('notice', 'message');]]></content>
+    <content><![CDATA[\$this->get('session')->getFlashBag()->add('${1:type}', '${2:message}');]]></content>
     <tabTrigger>sfsetflash</tabTrigger>
     <scope>source.php</scope>
     <description>Symfony2 / Controller / Set Flash</description>

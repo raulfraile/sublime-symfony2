@@ -11,5 +11,6 @@
 </container>
 ]]></content>
     <tabTrigger>sfdiservices</tabTrigger>
+    <scope>text.xml</scope>
     <description>Symfony2 / Dependency Injection / Service file</description>
 </snippet>

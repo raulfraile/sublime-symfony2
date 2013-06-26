@@ -1,19 +1,16 @@
 <snippet>
-	<content><![CDATA[
-namespace Acme\DemoBundle\Validator\Constraints;
-
+    <content><![CDATA[
 use Symfony\Component\Validator\Constraint;
 
 /**
  * @Annotation
  */
-class MyConstraint extends Constraint
+class ${1:Name}Constraint extends Constraint
 {
-    public \$message = 'The string "%string%" contains an illegal character: it can only contain letters or numbers.';
+    public \$message = '${2}';
 }
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>sfconstraint</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<description>Symfony2 / Validator / Constraint</description>
+    <tabTrigger>sfconstraint</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Validator / Constraint</description>
 </snippet>

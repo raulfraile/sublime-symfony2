@@ -1,11 +1,11 @@
 <snippet>
-    <content><![CDATA[namespace ${1:VendorName}\\Bundle\\${2:BundleName}Bundle\\DependencyInjection;
-
+    <content><![CDATA[
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\Config\FileLocator;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class ${2:BundleName}Extension extends Extension
+class ${1:Bundle}Extension extends Extension
 {
     public function load(array \$configs, ContainerBuilder \$container)
     {

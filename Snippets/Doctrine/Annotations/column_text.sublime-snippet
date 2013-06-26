@@ -1,7 +1,9 @@
 <snippet>
-    <content><![CDATA[/**
- * @ORM\Column(type="text")
- */]]></content>
+    <content><![CDATA[
+/**
+ * @ORM\Column(type="text"${0})
+ */
+]]></content>
     <tabTrigger>sftextcolumn</tabTrigger>
     <scope>source.php</scope>
     <description>Symfony2 / Model / String column doc</description>

@@ -1,8 +1,10 @@
 <snippet>
-    <content><![CDATA[/**
- * @ORM\Entity
+    <content><![CDATA[
+/**
+ * @ORM\Entity()
  * @ORM\Table(name="${1:name}")
- */]]></content>
+ */
+]]></content>
     <tabTrigger>sfentity</tabTrigger>
     <scope>source.php</scope>
     <description>Symfony2 / Model / Entity doc</description>

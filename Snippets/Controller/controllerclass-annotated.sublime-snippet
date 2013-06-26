@@ -1,15 +1,14 @@
 <snippet>
-    <content><![CDATA[namespace ${1:VendorName}\\Bundle\\${2:BundleName}Bundle\\Controller;
+    <content><![CDATA[
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller;
-use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route;
-use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template;
-
-class ${3:ControllerName}Controller extends Controller
+class ${1:Default}Controller extends Controller
 {
     /**
-     * @Route(${4:route configuration})
-     * @Template
+     * @Route("${2:/}"${3:, name="${4}"})
+     * @Template()
      */
     public function ${5:index}Action()
     {
@@ -19,5 +18,5 @@ class ${3:ControllerName}Controller extends Controller
 ]]></content>
     <tabTrigger>sfcontrollera</tabTrigger>
     <scope>source.php</scope>
-    <description>Symfony2 / Controller / Annotated controller class</description>
+    <description>Symfony2 / Controller / Controller class (annotated)</description>
 </snippet>

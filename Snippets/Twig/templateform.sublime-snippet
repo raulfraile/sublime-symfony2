@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 <form class="${1}" action="{{ ${2:path('${3}')} }}" method="${4:post}" {{ form_enctype(form) }}>
+    {{ form_errors(form) }}
     {{ form_widget(form) }}
-    <input type="submit" value="${5:Submit}" /> 
+    <input type="submit" value="${5:Submit}" />
 </form>
 ]]></content>
     <tabTrigger>sftwigform</tabTrigger>
