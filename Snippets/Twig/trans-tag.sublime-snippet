@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[{% trans %}${0}{% endtrans %}]]></content>
+    <tabTrigger>trans</tabTrigger>
+    <scope>text.html.twig</scope>
+    <description>Symfony2 / Twig / Tag / trans</description>
+</snippet>
