@@ -124,139 +124,6 @@ $this->getRequest()->getSession();
 $this->get('session')->getFlashBag()->add('type', 'message');
 ```
 
-### DependencyInjection ###
-
-`sfdiconfiguration`
-
-``` php
-use Symfony\Component\Config\Definition\Builder\TreeBuilder;
-use Symfony\Component\Config\Definition\ConfigurationInterface;
-
-class Configuration implements ConfigurationInterface
-{
-    public function getConfigTreeBuilder()
-    {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('bundle_name');
-
-        $rootNode
-            ->children()
-                ->scalarNode('enabled')
-                    ->setInfo('Enable the container extension')
-                    ->setDefault(true)
-                ->end()
-            ->end()
-        ;
-
-        return $treeBuilder;
-    }
-}
-```
-
-`sfdiextension`
-
-``` php
-use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-
-class BundleExtension extends Extension
-{
-    public function load(array $configs, ContainerBuilder $container)
-    {
-        $config = $this->processConfiguration(new Configuration(), $configs);
-        if (false === $config['enabled']) {
-            return;
-        }
-
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
-    }
-}
-```
-
-`sfdiservices`
-
-``` xml
-<?xml version="1.0" ?>
-
-<container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-
-    <services>
-        <service id="id" class="class" />
-    </services>
-</container>
-```
-
-### Forms ###
-
-`sfform`
-
-``` php
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-
-class NameType extends AbstractType
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => '',
-        ));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'name';
-    }
-}
-```
-
-`sfdatatransformer`
-
-``` php
-use Symfony\Component\Form\DataTransformerInterface;
-use Symfony\Component\Form\Exception\UnexpectedTypeException;
-use Symfony\Component\Form\Exception\TransformationFailedException;
-
-class NameTransformer implements DataTransformerInterface
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function transform($value)
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function reverseTransform($value)
-    {
-
-    }
-}
-```
-
 ### Doctrine ###
 
 #### Classes ####
@@ -435,31 +302,66 @@ class EntityNameRepository extends EntityRepository
  */
 ```
 
-### Validation ###
+### Forms ###
 
-`sfconstraint`
+`sfform`
 
 ``` php
-use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-/**
- * @Annotation
- */
-class NameConstraint extends Constraint
+class NameType extends AbstractType
 {
-    public $message = '';
+    /**
+     * {@inheritdoc}
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => '',
+        ));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'name';
+    }
 }
 ```
 
-`sfconstraintvalidator`
+`sfdatatransformer`
 
 ``` php
-use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Form\DataTransformerInterface;
+use Symfony\Component\Form\Exception\UnexpectedTypeException;
+use Symfony\Component\Form\Exception\TransformationFailedException;
 
-class NameValidator extends ConstraintValidator
+class NameTransformer implements DataTransformerInterface
 {
-    public function validate($value, Constraint $constraint)
+    /**
+     * {@inheritdoc}
+     */
+    public function transform($value)
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function reverseTransform($value)
     {
 
     }
@@ -513,6 +415,104 @@ class NameExtension extends \Twig_Extension
 
 ``` jinja
 {% trans %}{% endtrans %}
+```
+
+### Validation ###
+
+`sfconstraint`
+
+``` php
+use Symfony\Component\Validator\Constraint;
+
+/**
+ * @Annotation
+ */
+class NameConstraint extends Constraint
+{
+    public $message = '';
+}
+```
+
+`sfconstraintvalidator`
+
+``` php
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+
+class NameValidator extends ConstraintValidator
+{
+    public function validate($value, Constraint $constraint)
+    {
+
+    }
+}
+```
+
+### DependencyInjection ###
+
+`sfdiconfiguration`
+
+``` php
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+
+class Configuration implements ConfigurationInterface
+{
+    public function getConfigTreeBuilder()
+    {
+        $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('bundle_name');
+
+        $rootNode
+            ->children()
+                ->scalarNode('enabled')
+                    ->setInfo('Enable the container extension')
+                    ->setDefault(true)
+                ->end()
+            ->end()
+        ;
+
+        return $treeBuilder;
+    }
+}
+```
+
+`sfdiextension`
+
+``` php
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+
+class BundleExtension extends Extension
+{
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $config = $this->processConfiguration(new Configuration(), $configs);
+        if (false === $config['enabled']) {
+            return;
+        }
+
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.xml');
+    }
+}
+```
+
+`sfdiservices`
+
+``` xml
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="id" class="class" />
+    </services>
+</container>
 ```
 
 ### YAML ###
