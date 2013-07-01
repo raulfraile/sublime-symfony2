@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class ${1:Default}Command extends ContainerAwareCommand
+{
+    protected function configure()
+    {
+        \$this
+            ->setName('${2:default:command}')
+            ->setDescription('${3:Default description}');
+        ;
+    }
+
+    protected function execute(InputInterface \$input, OutputInterface \$output)
+    {
+        \$output->writeln('${4:Default text}');
+    }
+}
+]]></content>
+    <tabTrigger>sfcommandca</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Command / Command class (container aware)</description>
+</snippet>
