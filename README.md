@@ -124,6 +124,68 @@ $this->getRequest()->getSession();
 $this->get('session')->getFlashBag()->add('type', 'message');
 ```
 
+### Command ###
+
+`sfcommand`
+
+``` php
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class DefaultCommand extends Command
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function configure()
+    {
+        $this
+            ->setName('default:command')
+            ->setDescription('Default description');
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $output->writeln('Default text');
+    }
+}
+```
+
+`sfcommandca`
+
+``` php
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class DefaultCommand extends ContainerAwareCommand
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function configure()
+    {
+        $this
+            ->setName('default:command')
+            ->setDescription('Default description');
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $output->writeln('Default text');
+    }
+}
+```
+
 ### Doctrine ###
 
 #### Classes ####

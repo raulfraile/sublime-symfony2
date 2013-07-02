@@ -6,6 +6,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ${1:Default}Command extends Command
 {
+    /**
+     * {@inheritdoc}
+     */
     protected function configure()
     {
         \$this
@@ -14,6 +17,9 @@ class ${1:Default}Command extends Command
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function execute(InputInterface \$input, OutputInterface \$output)
     {
         \$output->writeln('${4:Default text}');
