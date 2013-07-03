@@ -142,7 +142,7 @@ class DefaultCommand extends Command
     {
         $this
             ->setName('default:command')
-            ->setDescription('Default description');
+            ->setDescription('Default description')
         ;
     }
 
@@ -151,7 +151,7 @@ class DefaultCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Default text');
+
     }
 }
 ```
@@ -172,7 +172,7 @@ class DefaultCommand extends ContainerAwareCommand
     {
         $this
             ->setName('default:command')
-            ->setDescription('Default description');
+            ->setDescription('Default description')
         ;
     }
 
@@ -181,7 +181,7 @@ class DefaultCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Default text');
+
     }
 }
 ```

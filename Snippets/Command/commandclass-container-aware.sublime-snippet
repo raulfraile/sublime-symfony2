@@ -13,7 +13,7 @@ class ${1:Default}Command extends ContainerAwareCommand
     {
         \$this
             ->setName('${2:default:command}')
-            ->setDescription('${3:Default description}');
+            ->setDescription('${3:Default description}')
         ;
     }
 
@@ -22,7 +22,7 @@ class ${1:Default}Command extends ContainerAwareCommand
      */
     protected function execute(InputInterface \$input, OutputInterface \$output)
     {
-        \$output->writeln('${4:Default text}');
+        ${0}
     }
 }
 ]]></content>
