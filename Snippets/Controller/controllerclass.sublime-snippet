@@ -1,12 +1,14 @@
 <snippet>
     <content><![CDATA[
+namespace ${1:Vendor}\\${2:Bundle}\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ${1:Default}Controller extends Controller
+class ${3:Default}Controller extends Controller
 {
-    public function ${2:index}Action()
+    public function ${4:index}Action(${5:parameters})
     {
-        return \$this->render('${3}.html.twig');
+        return \$this->render('${6}.html.twig');
     }
 }
 ]]></content>
