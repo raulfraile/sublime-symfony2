@@ -10,7 +10,7 @@ class ${1:Default}Controller extends Controller
      * @Route("${2:/}"${3:, name="${4}"})
      * @Template()
      */
-    public function ${5:index}Action()
+    public function ${5:index}Action(${6})
     {
         ${0}
     }

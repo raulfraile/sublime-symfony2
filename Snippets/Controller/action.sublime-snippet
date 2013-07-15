@@ -1,8 +1,8 @@
 <snippet>
     <content><![CDATA[
-public function ${1:index}Action()
+public function ${1:index}Action(${2})
 {
-    return \$this->render('${2}.html.twig');
+    return \$this->render('${3}.html.twig');
 }
 ]]></content>
     <tabTrigger>sfaction</tabTrigger>

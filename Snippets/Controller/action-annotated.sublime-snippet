@@ -4,7 +4,7 @@
  * @Route("${1:/}"${2:, name="${3}"})
  * @Template()
  */
-public function ${4:index}Action()
+public function ${4:index}Action(${5})
 {
     ${0}
 }
