@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @ORM\ManyToOne(targetEntity="${1}")
+ * @ORM\JoinColumn(name="${2}", referencedColumnName="${3}")
+ */
+]]></content>
+    <tabTrigger>sfmanytoonecolumn</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / ManyToOne column doc</description>
+</snippet>
