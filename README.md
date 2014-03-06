@@ -473,6 +473,12 @@ class NameExtension extends \Twig_Extension
 </form>
 ```
 
+`sftwigrow`
+
+``` jinja
+{{ form_row(form.) }}
+```
+
 `trans`
 
 ``` jinja
