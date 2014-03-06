@@ -8,5 +8,5 @@
 ]]></content>
     <tabTrigger>sftwigform</tabTrigger>
     <scope>text.html.twig</scope>
-    <description>Symfony2 / Twig / Template / form</description>
+    <description>Symfony2 / Twig / Template / Form</description>
 </snippet>

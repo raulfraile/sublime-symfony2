@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+{{ form_row(${1:form}.${2}) }}
+]]></content>
+    <tabTrigger>sftwigrow</tabTrigger>
+    <scope>text.html.twig</scope>
+    <description>Symfony2 / Twig / Template / FormRow</description>
+</snippet>
