@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+{% block ${1} %}
+    ${2}
+{% endblock %}
+]]></content>
+    <tabTrigger>sftwigblock</tabTrigger>
+    <scope>text.html.twig</scope>
+    <description>Symfony2 / Twig / Tag / Block</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+{% if ${1} %}
+    ${2}
+{% endif %}
+]]></content>
+    <tabTrigger>sftwigif</tabTrigger>
+    <scope>text.html.twig</scope>
+    <description>Symfony2 / Twig / Logic / If</description>
+</snippet>
