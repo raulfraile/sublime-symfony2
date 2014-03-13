@@ -589,7 +589,7 @@ class BundleExtension extends Extension
 
 ``` yaml
 route_name:
-    pattern:   /
+    path:   /
     defaults:  { _controller: Bundle:Controller:action }
 ```
 
