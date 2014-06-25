@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[\$request = \$this->getRequest();]]></content>
+    <tabTrigger>sfrequest</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Controller / Get HTTP Request</description>
+</snippet>
