@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @ORM\OneToMany(targetEntity="$2", mappedBy="$3")
+ */
+ private \$${1:$SELECTION};
+]]></content>
+    <tabTrigger>sfonetomany</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / OneToMany doc</description>
+</snippet>

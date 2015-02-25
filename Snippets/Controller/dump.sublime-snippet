@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+\Doctrine\Common\Util\Debug::dump(${1:$SELECTION});
+]]></content>
+  <tabTrigger>sfdump</tabTrigger>
+  <scope>source.php</scope>
+  <description>Dumping entities with doctrine</description>
+</snippet>

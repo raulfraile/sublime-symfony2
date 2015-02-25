@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+{% javascripts '@${1:$SELECTION}/Resources/public/js/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+]]></content>
+  <tabTrigger>sfasseticjs</tabTrigger>
+  <description>Asset tag</description>
+  <scope>text.html.twig</scope>
+</snippet>

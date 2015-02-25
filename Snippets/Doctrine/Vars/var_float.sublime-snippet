@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @ORM\Column(name="${1/([[:upper:]]+)/(?1_\l$1:)/g}", type="float"$2)
+ */
+ private \$${1:$SELECTION};
+]]></content>
+    <tabTrigger>sffloat</tabTrigger>
+    <scope>source.php</scope>
+    <description>Symfony2 / Model / Float doc</description>
+</snippet>
