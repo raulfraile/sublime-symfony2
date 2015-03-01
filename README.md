@@ -124,6 +124,12 @@ $this->getRequest()->getSession();
 $this->get('session')->getFlashBag()->add('type', 'message');
 ```
 
+`sfdump`
+
+``` php
+\Doctrine\Common\Util\Debug::dump();
+```
+
 ### Command ###
 
 `sfcommand`
@@ -236,6 +242,30 @@ use Doctrine\ORM\EntityRepository;
 
 class EntityNameRepository extends EntityRepository
 {
+}
+```
+
+`sfgetset`
+Just type your variable name (firstName for instance), and the snippets will name the functions automatically (getFirstName).
+
+``` php
+/**
+* Get 
+* @return  
+*/
+public function get()
+{
+    return $this->;
+}
+
+/**
+* Set 
+* @return  
+*/
+public function set($)
+{
+    $this-> = $;
+    return $this;
 }
 ```
 
@@ -364,6 +394,138 @@ class EntityNameRepository extends EntityRepository
  */
 ```
 
+#### Vars ####
+
+After triggering the snippets, just type your var name and it will automatically set the name in the annotation (If you type 'firstName', your variable will be named 'firstName' and in the annotation the name will be 'first_name').
+
+`sfid`
+
+``` php
+/**
+ * @ORM\Column(name="id", type="integer", nullable=false)
+ * @ORM\Id()
+ * @ORM\GeneratedValue(strategy="IDENTITY")
+ */
+ private $id;
+```
+
+`sfstring`
+
+``` php
+/**
+ * @ORM\Column(name="", type="string", length=255)
+ */
+ private $;
+```
+
+`sfdecimal`
+
+``` php
+/**
+ * @ORM\Column(name="", type="decimal", scale=2)
+ */
+ private $;
+```
+
+`sftext`
+
+``` php
+/**
+ * @ORM\Column(name="", type="text")
+ */
+ private $;
+```
+
+`sfinteger`
+
+``` php
+/**
+ * @ORM\Column(name="", type="integer")
+ */
+ private $;
+```
+
+`sfboolean`
+
+``` php
+/**
+ * @ORM\Column(name="", type="boolean")
+ */
+ private $;
+```
+
+`sfsmallint`
+
+``` php
+/**
+ * @ORM\Column(name="", type="smallint")
+ */
+ private $;
+```
+
+`sfbigint`
+
+``` php
+/**
+ * @ORM\Column(name="", type="bigint")
+ */
+ private $;
+```
+
+`sfdatetime`
+
+``` php
+/**
+ * @ORM\Column(name="", type="datetime")
+ */
+ private $;
+```
+
+`sfdate`
+
+``` php
+/**
+ * @ORM\Column(name="", type="date")
+ */
+ private $;
+```
+
+`sftime`
+
+``` php
+/**
+ * @ORM\Column(name="", type="time")
+ */
+ private $;
+```
+
+`sffloat`
+
+``` php
+/**
+ * @ORM\Column(name="", type="float")
+ */
+ private $;
+```
+
+`sfarray`
+
+``` php
+/**
+ * @ORM\Column(name="", type="array")
+ */
+ private $;
+```
+
+`sfobject`
+
+``` php
+/**
+ * @ORM\Column(name="", type="object")
+ */
+ private $;
+```
+
 ### Forms ###
 
 `sfform`
@@ -483,6 +645,28 @@ class NameExtension extends \Twig_Extension
 
 ``` jinja
 {% trans %}{% endtrans %}
+```
+
+`sfasset`
+
+``` jinja
+{{ asset('bundles/')}}
+```
+
+`sfasseticjs`
+
+``` jinja
+{% javascripts '@/Resources/public/js/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+```
+
+`sfasseticcss`
+
+``` jinja
+{% stylesheets 'bundles//css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
 ```
 
 ### Validation ###

@@ -5,7 +5,7 @@
  * @ORM\Id()
  * @ORM\GeneratedValue(strategy="IDENTITY")
  */
- private $id;
+ private \$id;
 ]]></content>
     <tabTrigger>sfid</tabTrigger>
     <scope>source.php</scope>
