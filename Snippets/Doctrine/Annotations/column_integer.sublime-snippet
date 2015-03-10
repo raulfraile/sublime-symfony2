@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\Column(type="integer"${0})
+ * @ORM\Column(name="${3:${1/([[:upper:]]+)/(?1_\l$1:)/g}}", type="integer"$4)
  */
+ ${2:private} \$${1:$SELECTION};
 ]]></content>
     <tabTrigger>sfintegercolumn</tabTrigger>
     <scope>source.php</scope>

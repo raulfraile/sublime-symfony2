@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\Column(type="object"${0})
+ * @ORM\Column(name="${3:${1/([[:upper:]]+)/(?1_\l$1:)/g}}", type="object"$4)
  */
+ ${2:private} \$${1:$SELECTION};
 ]]></content>
     <tabTrigger>sfobjectcolumn</tabTrigger>
     <scope>source.php</scope>

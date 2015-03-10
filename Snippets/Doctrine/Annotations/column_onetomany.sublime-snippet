@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\OneToMany(targetEntity="${1}", mappedBy="${2}")
+ * @ORM\OneToMany(targetEntity="$3", mappedBy="$4"$5)
  */
+ ${2:private} \$${1:$SELECTION};
 ]]></content>
     <tabTrigger>sfonetomanycolumn</tabTrigger>
     <scope>source.php</scope>

@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\Column(type="decimal", scale=${1:2}${0})
+ * @ORM\Column(name="${4:${1/([[:upper:]]+)/(?1_\l$1:)/g}}", type="decimal", scale=${3:2}$5)
  */
+ ${2:private} \$${1:$SELECTION};
 ]]></content>
     <tabTrigger>sfdecimalcolumn</tabTrigger>
     <scope>source.php</scope>

@@ -271,6 +271,8 @@ public function set($)
 
 #### Annotations ####
 
+After triggering the snippets, just type your var name and it will automatically set the name in the annotation (If you type 'firstName', your variable will be named 'firstName' and in the annotation the name will be 'first_name').
+
 `sfentity`
 
 ``` php
@@ -288,128 +290,10 @@ public function set($)
  * @ORM\Id()
  * @ORM\GeneratedValue(strategy="IDENTITY")
  */
-```
-
-`sfstringcolumn`
-
-``` php
-/**
- * @ORM\Column(type="string", length=100)
- */
-```
-
-`sfdecimalcolumn`
-
-``` php
-/**
- * @ORM\Column(type="decimal", scale=${1:2})
- */
-```
-
-`sftextcolumn`
-
-``` php
-/**
- * @ORM\Column(type="text")
- */
-```
-
-`sfintegercolumn`
-
-``` php
-/**
- * @ORM\Column(type="integer")
- */
-```
-
-`sfbooleancolumn`
-
-``` php
-/**
- * @ORM\Column(type="boolean")
- */
-```
-
-`sfsmallintcolumn`
-
-``` php
-/**
- * @ORM\Column(type="smallint")
- */
-```
-
-`sfbigintcolumn`
-
-``` php
-/**
- * @ORM\Column(type="bigint")
- */
-```
-
-`sfdatetimecolumn`
-
-``` php
-/**
- * @ORM\Column(type="datetime")
- */
-```
-
-`sfdatecolumn`
-
-``` php
-/**
- * @ORM\Column(type="date")
- */
-```
-
-`sftimecolumn`
-
-``` php
-/**
- * @ORM\Column(type="time")
- */
-```
-
-`sffloatcolumn`
-
-``` php
-/**
- * @ORM\Column(type="float")
- */
-```
-
-`sfarraycolumn`
-
-``` php
-/**
- * @ORM\Column(type="array")
- */
-```
-
-`sfobjectcolumn`
-
-``` php
-/**
- * @ORM\Column(type="object")
- */
-```
-
-#### Vars ####
-
-After triggering the snippets, just type your var name and it will automatically set the name in the annotation (If you type 'firstName', your variable will be named 'firstName' and in the annotation the name will be 'first_name').
-
-`sfid`
-
-``` php
-/**
- * @ORM\Column(name="id", type="integer", nullable=false)
- * @ORM\Id()
- * @ORM\GeneratedValue(strategy="IDENTITY")
- */
  private $id;
 ```
 
-`sfstring`
+`sfstringcolumn`
 
 ``` php
 /**
@@ -418,7 +302,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfdecimal`
+`sfdecimalcolumn`
 
 ``` php
 /**
@@ -427,7 +311,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sftext`
+`sftextcolumn`
 
 ``` php
 /**
@@ -436,7 +320,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfinteger`
+`sfintegercolumn`
 
 ``` php
 /**
@@ -445,7 +329,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfboolean`
+`sfbooleancolumn`
 
 ``` php
 /**
@@ -454,7 +338,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfsmallint`
+`sfsmallintcolumn`
 
 ``` php
 /**
@@ -463,7 +347,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfbigint`
+`sfbigintcolumn`
 
 ``` php
 /**
@@ -472,7 +356,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfdatetime`
+`sfdatetimecolumn`
 
 ``` php
 /**
@@ -481,7 +365,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfdate`
+`sfdatecolumn`
 
 ``` php
 /**
@@ -490,7 +374,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sftime`
+`sftimecolumn`
 
 ``` php
 /**
@@ -499,7 +383,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sffloat`
+`sffloatcolumn`
 
 ``` php
 /**
@@ -508,7 +392,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfarray`
+`sfarraycolumn`
 
 ``` php
 /**
@@ -517,7 +401,7 @@ After triggering the snippets, just type your var name and it will automatically
  private $;
 ```
 
-`sfobject`
+`sfobjectcolumn`
 
 ``` php
 /**
@@ -646,6 +530,8 @@ class NameExtension extends \Twig_Extension
 ``` jinja
 {% trans %}{% endtrans %}
 ```
+
+### Template ###
 
 `sfasset`
 
@@ -787,6 +673,7 @@ If you miss something, feel free to fork this repository and send a PR with your
 * Pierre-Yves LEBECQ: [github](http://github.com/pylebecq) | [twitter](http://twitter.com/pylebecq)
 * Willemsen Christophe: [github](http://github.com/kwattro) | [twitter](http://twitter.com/kwattroweb)
 * Alexandre Salomé: [github](http://github.com/alexandresalome)
+* Purple Babar: [github](https://github.com/PurpleBabar)
 
 [sublime]: http://www.sublimetext.com/
 [symfony2]: http://www.symfony.com
