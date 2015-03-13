@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\Column(type="date"${0})
+ * @ORM\Column(name="${3:${1/([[:upper:]]+)/(?1_\l$1:)/g}}", type="date"$4)
  */
+ ${2:private} \$${1:$SELECTION};
 ]]></content>
     <tabTrigger>sfdatecolumn</tabTrigger>
     <scope>source.php</scope>

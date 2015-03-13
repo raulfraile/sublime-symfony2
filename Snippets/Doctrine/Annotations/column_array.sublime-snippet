@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\Column(type="array"${0})
+ * @ORM\Column(name="${3:${1/([[:upper:]]+)/(?1_\l$1:)/g}}", type="array"$4)
  */
+ ${2:private} \$${1:$SELECTION};
 ]]></content>
     <tabTrigger>sfarraycolumn</tabTrigger>
     <scope>source.php</scope>

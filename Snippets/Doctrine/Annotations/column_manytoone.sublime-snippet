@@ -1,9 +1,10 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\ManyToOne(targetEntity="${1}")
- * @ORM\JoinColumn(name="${2}", referencedColumnName="${3}")
+ * @ORM\ManyToOne(targetEntity="$2")
+ * @ORM\JoinColumn(name="${4:${1/([[:upper:]]+)/(?1_\l$1:)/g}}", referencedColumnName="${3:id}"$5)
  */
+ ${2:private} \$${1:$SELECTION};
 ]]></content>
     <tabTrigger>sfmanytoonecolumn</tabTrigger>
     <scope>source.php</scope>

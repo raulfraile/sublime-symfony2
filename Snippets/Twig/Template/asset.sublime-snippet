@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+{{ asset('bundles/${1:$SELECTION}')}}
+]]></content>
+  <tabTrigger>sfasset</tabTrigger>
+  <description>Asset tag</description>
+  <scope>text.html.twig</scope>
+</snippet>

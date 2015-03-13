@@ -124,6 +124,12 @@ $this->getRequest()->getSession();
 $this->get('session')->getFlashBag()->add('type', 'message');
 ```
 
+`sfdump`
+
+``` php
+\Doctrine\Common\Util\Debug::dump();
+```
+
 ### Command ###
 
 `sfcommand`
@@ -239,7 +245,33 @@ class EntityNameRepository extends EntityRepository
 }
 ```
 
+`sfgetset`
+Just type your variable name (firstName for instance), and the snippets will name the functions automatically (getFirstName).
+
+``` php
+/**
+* Get 
+* @return  
+*/
+public function get()
+{
+    return $this->;
+}
+
+/**
+* Set 
+* @return  
+*/
+public function set($)
+{
+    $this-> = $;
+    return $this;
+}
+```
+
 #### Annotations ####
+
+After triggering the snippets, just type your var name and it will automatically set the name in the annotation (If you type 'firstName', your variable will be named 'firstName' and in the annotation the name will be 'first_name').
 
 `sfentity`
 
@@ -258,110 +290,124 @@ class EntityNameRepository extends EntityRepository
  * @ORM\Id()
  * @ORM\GeneratedValue(strategy="IDENTITY")
  */
+ private $id;
 ```
 
 `sfstringcolumn`
 
 ``` php
 /**
- * @ORM\Column(type="string", length=100)
+ * @ORM\Column(name="", type="string", length=255)
  */
+ private $;
 ```
 
 `sfdecimalcolumn`
 
 ``` php
 /**
- * @ORM\Column(type="decimal", scale=${1:2})
+ * @ORM\Column(name="", type="decimal", scale=2)
  */
+ private $;
 ```
 
 `sftextcolumn`
 
 ``` php
 /**
- * @ORM\Column(type="text")
+ * @ORM\Column(name="", type="text")
  */
+ private $;
 ```
 
 `sfintegercolumn`
 
 ``` php
 /**
- * @ORM\Column(type="integer")
+ * @ORM\Column(name="", type="integer")
  */
+ private $;
 ```
 
 `sfbooleancolumn`
 
 ``` php
 /**
- * @ORM\Column(type="boolean")
+ * @ORM\Column(name="", type="boolean")
  */
+ private $;
 ```
 
 `sfsmallintcolumn`
 
 ``` php
 /**
- * @ORM\Column(type="smallint")
+ * @ORM\Column(name="", type="smallint")
  */
+ private $;
 ```
 
 `sfbigintcolumn`
 
 ``` php
 /**
- * @ORM\Column(type="bigint")
+ * @ORM\Column(name="", type="bigint")
  */
+ private $;
 ```
 
 `sfdatetimecolumn`
 
 ``` php
 /**
- * @ORM\Column(type="datetime")
+ * @ORM\Column(name="", type="datetime")
  */
+ private $;
 ```
 
 `sfdatecolumn`
 
 ``` php
 /**
- * @ORM\Column(type="date")
+ * @ORM\Column(name="", type="date")
  */
+ private $;
 ```
 
 `sftimecolumn`
 
 ``` php
 /**
- * @ORM\Column(type="time")
+ * @ORM\Column(name="", type="time")
  */
+ private $;
 ```
 
 `sffloatcolumn`
 
 ``` php
 /**
- * @ORM\Column(type="float")
+ * @ORM\Column(name="", type="float")
  */
+ private $;
 ```
 
 `sfarraycolumn`
 
 ``` php
 /**
- * @ORM\Column(type="array")
+ * @ORM\Column(name="", type="array")
  */
+ private $;
 ```
 
 `sfobjectcolumn`
 
 ``` php
 /**
- * @ORM\Column(type="object")
+ * @ORM\Column(name="", type="object")
  */
+ private $;
 ```
 
 ### Forms ###
@@ -485,6 +531,30 @@ class NameExtension extends \Twig_Extension
 {% trans %}{% endtrans %}
 ```
 
+### Template ###
+
+`sfasset`
+
+``` jinja
+{{ asset('bundles/')}}
+```
+
+`sfasseticjs`
+
+``` jinja
+{% javascripts '@/Resources/public/js/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+```
+
+`sfasseticcss`
+
+``` jinja
+{% stylesheets 'bundles//css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+```
+
 ### Validation ###
 
 `sfconstraint`
@@ -603,6 +673,7 @@ If you miss something, feel free to fork this repository and send a PR with your
 * Pierre-Yves LEBECQ: [github](http://github.com/pylebecq) | [twitter](http://twitter.com/pylebecq)
 * Willemsen Christophe: [github](http://github.com/kwattro) | [twitter](http://twitter.com/kwattroweb)
 * Alexandre Salomé: [github](http://github.com/alexandresalome)
+* Purple Babar: [github](https://github.com/PurpleBabar)
 
 [sublime]: http://www.sublimetext.com/
 [symfony2]: http://www.symfony.com

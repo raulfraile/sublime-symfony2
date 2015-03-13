@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[/**
+* Get $1
+* @return $2 
+*/
+public function get${1/(.*)/\u$1/}()
+{
+    return \$this->${1:$SELECTION};
+}
+
+/**
+* Set $1
+* @return $2 
+*/
+public function set${1/(.*)/\u$1/}(\$$1)
+{
+    \$this->$1 = \$$1;
+    return \$this;
+}
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>sfgetset</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.php</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>Create getter and setter methods</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+{% stylesheets 'bundles/${1:$SELECTION}/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+]]></content>
+  <tabTrigger>sfasseticcss</tabTrigger>
+  <description>Asset tag</description>
+  <scope>text.html.twig</scope>
+</snippet>
