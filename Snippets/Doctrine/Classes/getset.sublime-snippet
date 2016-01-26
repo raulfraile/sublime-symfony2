@@ -10,7 +10,7 @@ public function get${1/(.*)/\u$1/}()
 
 /**
 * Set $1
-* @return $2 
+* @return \$this
 */
 public function set${1/(.*)/\u$1/}(\$$1)
 {
