@@ -1,7 +1,6 @@
 This is a [Sublime Text][sublime] package which includes handy snippets for doing [Symfony2][symfony2] framework development.
 
 **Important:** The `master` branch of this plugin will always be in sync with the latest stable release of Symfony2.
-New branches will be created whenever a non backward-compatible change in Symfony2 is introduced into the snippets. So, if you need to work with an older version of Symfony2, please check the branch list to find the branch compatible with the version you are looking for and proceed to a manual install of this branch.
 
 ## Installation ##
 
@@ -260,7 +259,7 @@ public function get()
 
 /**
 * Set 
-* @return  
+* @return $this
 */
 public function set($)
 {
@@ -417,7 +416,7 @@ After triggering the snippets, just type your var name and it will automatically
 ``` php
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class NameType extends AbstractType
 {
@@ -432,7 +431,7 @@ class NameType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => '',
