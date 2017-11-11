@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+{{ path('')}}
+]]></content>
+  <tabTrigger>sfpath</tabTrigger>
+  <description>symfony2 twig path</description>
+  <scope>text.html.twig</scope>
+</snippet>
